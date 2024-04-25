@@ -41,6 +41,15 @@ function M.setup(opts)
 	vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", callback = update_usage })
 	vim.api.nvim_create_autocmd("VimLeavePre", { pattern = "*", callback = update_usage })
 
+	local function return_from_afk()
+		-- once we come back from afk, we discard the time that we were afk
+		local after = os.time()
+
+		vim.fn.writefile({ after }, usage_last_file)
+	end
+
+	vim.api.nvim_create_autocmd("FocusGained", { pattern = "*", callback = return_from_afk })
+
 	-- we create the :Usage command
 
 	local function display_usage()
