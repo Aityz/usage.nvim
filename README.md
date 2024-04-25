@@ -6,7 +6,7 @@ Usage.nvim is a simple plugin to track how many hours you have spent on Neovim. 
 
 # Features
 - **Tracks time spent on Neovim**: The plugin tracks the time spent on Neovim and saves it in a file.
-- **Nice display UI**: The plugin informs you about your total time in either a floating windor, `vim.notify`, or `echo`.
+- **Nice display UI**: The plugin informs you about your total time in either a floating window, `vim.notify`, or `echo`.
 
 # Installation
 You will need to call ``require("usage").setup()`` for this plugin to work.
