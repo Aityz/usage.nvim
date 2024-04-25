@@ -14,26 +14,22 @@ You will need to call ``require("usage").setup()`` for this plugin to work.
 <details>
     <summary>Lazy.nvim</summary>
 
-    ```lua
     {
         "Aityz/usage.nvim",
         config = function()
             require('usage').setup()
         end
     }
-    ```
 </details>
 <details>
     <summary>Packer.nvim</summary>
     
-    ```lua
     use {
         'Aityz/usage.nvim',
         config = function()
             require('usage').setup()
         end
     }
-    ```
 </details>
 
 # Configuration
