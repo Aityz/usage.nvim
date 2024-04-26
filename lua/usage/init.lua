@@ -55,7 +55,7 @@ function M.setup(opts)
 		update_usage()
 	end
 
-	vim.api.create_autocmd("FocusLost", { pattern = "*", callback = afk })
+	vim.api.nvim_create_autocmd("FocusLost", { pattern = "*", callback = afk })
 
 	-- we create the :Usage command
 
