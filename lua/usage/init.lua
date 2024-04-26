@@ -50,6 +50,13 @@ function M.setup(opts)
 
 	vim.api.nvim_create_autocmd("FocusGained", { pattern = "*", callback = return_from_afk })
 
+	local function afk()
+		-- once we go afk, we update time
+		update_usage()
+	end
+
+	vim.api.create_autocmd("FocusLost", { pattern = "*", callback = afk })
+
 	-- we create the :Usage command
 
 	local function display_usage()
